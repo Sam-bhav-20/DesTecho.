@@ -1,0 +1,9 @@
+.carousel-slide_main{
+    margin: 0 10px;
+}
+.logo-image_main{
+    transition: box-shadow 0.3s ease;
+}
+.logo-image_main:hover{
+    box-shadow: 5px 0px 5px 5px #33fff8, 5px 0px 5px 5px #ffa3a3;
+}

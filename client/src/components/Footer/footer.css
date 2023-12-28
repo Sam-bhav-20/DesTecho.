@@ -1,0 +1,109 @@
+/* Footer.css */
+
+.footerabc1 {
+    padding: 0 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footerabc_upper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80vw;
+    padding: 72px 0 44px;
+    row-gap: 0;
+}
+
+.footer-v2__list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 16px;
+    margin-right: 16px; /* Add margin to the right */
+}
+
+.footer-v2__list li {
+    margin: 4px 0;
+    text-align: center; /* Center the text within li */
+}
+
+.footer-v2__link {
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #0d0c22;
+}
+.footer_link_mid {
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    padding: 2rem; /* Add padding to increase the length */
+}
+
+.footer_link_mid ul{
+    margin-top: 0;
+    margin-bottom: 1rem;
+    margin-right: 2rem;
+    margin-left: -1rem;
+}
+.footer_link_mid_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 47px;
+    flex-direction: row;
+}
+
+.footer-v2__social-links {
+    display: flex;
+    align-items: center;
+    margin-top: -18px;
+    gap: 0px;
+}
+
+.footer-v2__social-link {
+    width: 24px;
+    height: 24px;
+    color: #0d0c22;
+    margin-right: 16px; /* Increase margin-right for spacing */
+}
+
+.footerabc_lower {
+    display: flex;
+    flex-direction: row;
+    padding: 44px 0;
+    row-gap: 0;
+}
+
+a {
+    text-decoration: none;
+}
+.footerabc_lower{
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 44px 0;
+    row-gap: 0;
+    padding-top: 0px;
+    color: #6e6d7a;
+    font-size: 14px;
+    line-height: 20px;
+}
+.footer_lower_list_ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    column-gap: 16px;
+    list-style: none;
+    row-gap: 4px;
+}

@@ -1,0 +1,71 @@
+.div1-1divinlast2-findtalent{
+    align-items: center;
+    display: flex;
+    flex: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 60px;
+    height: min-content;
+    justify-content: center;
+    overflow: hidden;
+    padding: 118px;
+    position: relative;
+    width: 100%;
+}
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: inherit;
+}
+.div2-1divinlast2-findtalent{
+    align-items: flex-start;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 40px;
+    height: min-content;
+    justify-content: flex-start;
+    overflow: visible;
+    padding: 0;
+    position: relative;
+    width: 1px;
+}
+.div3-1divinlast2-findtalent{
+    align-items: center;
+    /* background: linear-gradient(90deg, #fcd0ba,#f6d8fb); */
+    border-radius: 16px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 16px;
+    height: min-content;
+    justify-content: flex-end;
+    overflow: hidden;
+    padding: 40px;
+    position: relative;
+    width: min-content;
+    will-change: transform;
+    margin: 10px -2px 0px 10px;
+}
+/* .div1inlast2.h4{
+    font-weight: 400;
+    text-align: left;
+    font-size: 16px;
+    background-color: rgb(36, 157, 117);
+} */
+.div1inlast2-findtalent{
+    align-items: flex-start;
+    display: flex;
+    flex: none;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 17px;
+    height: min-content;
+    justify-content: flex-start;
+    overflow: visible;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+  

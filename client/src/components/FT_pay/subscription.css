@@ -1,0 +1,49 @@
+.lastdiv-findtalent {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row; /* Change back to row */
+    flex-wrap: wrap; /* Allow wrapping */
+    gap: 24px;
+    justify-content: center;
+    max-width: 1200px;
+    overflow: visible;
+    padding: 80px 0;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  .lastdiv1-findtalent {
+    border: 1px solid #5a5a5a;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    /* gap: 32px; */
+    gap: 0px;
+    justify-content: flex-start;
+    padding: 40px;
+    width: calc(57% - 12px); /* Adjusted width to account for gap */
+  }
+  
+  .lastdiv2-findtalent {
+    border: 1px solid #5a5a5a;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: flex-start;
+    padding: 32px;
+    width: calc(35% - 12px); /* Adjusted width to account for gap */
+  }
+  .lastdiv1-findtalent-dollar{
+    align-items: center;
+    display: flex;
+    flex: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: min-content;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 100%;
+  }

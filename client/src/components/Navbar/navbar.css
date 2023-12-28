@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Borel&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@800&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
+.App {
+  text-align: center;
+}
+.nav-item{
+  padding-left: 8px;
+}
+.nav-link{
+  font-size: 20px;
+  /* font-weight: 500px; */
+  font-weight: 600;
+  font-size: large;
+  /* font-family: 'EB Garamond', serif; */
+  /* font-family: 'Merriweather', serif; */
+  font-family: 'Cormorant Garamond', serif;
+}
+.nav-item_desTecho{
+  margin-left: 20.5rem;
+  padding-top: 18px;
+}
+.navbar-nav {
+  display: flex;
+  align-items: center;
+}
+
+.font-semibold {
+  font-weight: 500; /* You can adjust the font weight value */
+}
+.btn-white {
+  background-color: white;
+  color: black;
+}
+
+.btn-grey {
+  background-color: #F8F7F4;
+  color: black;
+}
+.btn-darkgrey:hover
+{
+  background-color: #edece8;
+  color: black;
+}
+.hire_creatives{
+  margin-right: 40px !important;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

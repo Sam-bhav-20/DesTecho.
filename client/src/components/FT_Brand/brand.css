@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: inherit;
+  }
+  
+  .div1choose {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 72px;
+    justify-content: center; /* Center vertically */
+    padding: 40px 0 0;
+    width: 100%;
+    max-width: 1200px;
+    overflow: visible;
+    position: relative;
+    height: min-content;
+  }
+  
+  .div2choose {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    transform: none;
+    width: 98%;
+    position: relative;
+    height: auto;
+    overflow: hidden;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    padding-left: 360px;
+    word-break: break-word;
+  }
+  
+  .div3choose {
+    font-family: "Haas Grot Text R 55 Roman", sans-serif;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0px;
+    line-height: 1.2em;
+    color: #0d0c22;
+    text-align: center; /* Center the text */
+    text-decoration: none;
+    text-transform: none;
+  }
+  /* .div4choose{
+    font-weight: 400;
+    text-align: left;
+    /* : black; */
+    /* font-size: 16px;
+  } */ 
