@@ -37,4 +37,29 @@ module.exports.register = async (req, res, next) => {
         // Pass any errors to the next middleware
         next(ex);
     }
+}
+module.exports.login = async (req, res, next) => {
+    try {
+        // Extract data from request body
+        const { username, password } = req.body;
+
+        // Check if the username is already taken
+        const user = await User.findOne({ username });
+        if (!user) {
+            return res.json({ msg: 'Incorrect username or password', status: false });
+        }
+
+        // Check if the email is already in use
+        const isPassword = await bcrypt.compare(password,user.password);
+        if (!isPassword) {
+            return res.json({ msg: 'Incorrect username or password', status: false });
+        }
+
+        user.password=undefined;
+        // Send a JSON response with the status and user information
+        return res.json({ status: true, user });
+    } catch (ex) {
+        // Pass any errors to the next middleware
+        next(ex);
+    }
 };
