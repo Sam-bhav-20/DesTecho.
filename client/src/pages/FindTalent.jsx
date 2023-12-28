@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import Navbar from '../components/Navbar/Navbar'
 import Carousel from '../components/FT_slider/Carousel'
 import './findTalent.css';
@@ -10,7 +10,23 @@ import Last2 from '../components/FT_div_vid/LastSec';
 import Subscription from '../components/FT_pay/Subscription';
 import SliderMain from '../components/Main_Slider/SliderMain';
 import Footer from '../components/Footer/Footer';
+import { useNavigate } from 'react-router-dom';
 const FindTalent = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        if (!localStorage.getItem('DesTecho-user')) {
+          navigate('/login');
+        }
+      } catch (error) {
+        console.error('Error fetching user:', error);
+        // Handle error, e.g., redirect to login page or display an error message
+      }
+    };
+  
+    fetchUser();
+  }, [navigate]);
   return (
     <>
     {/* <div className=''> */}

@@ -1,7 +1,12 @@
-import React from "react";
+import React,{useState} from "react";
 import './navbar.css';
+// import Logout from "../Logout/Logout";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 function Navbar() {
+    const logOut=()=>{
+        window.localStorage.clear();
+        window.location.href="./login";
+    }
   return (
     <div className="my__navbar my-auto py-2">
       <nav className="navbar navbar-expand-lg pb-3">
@@ -27,14 +32,14 @@ function Navbar() {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link active font-semibold" aria-current="page" href="inspiration" style={{
+                <a className="nav-link active font-semibold" aria-current="page" href="/inspiration" style={{
                   fontWeight:"600",
                 }}>
                   Inspiration
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link active font-semibold" aria-current="page" href="learndesign" style={{
+                <a className="nav-link active font-semibold" aria-current="page" href="/learndesign" style={{
                   fontWeight:"600",
                 }}>
                   Learn Design
@@ -48,20 +53,19 @@ function Navbar() {
                 </a>
               </li>
               <li className="nav-item_desTecho">
-                <a className="nav-link active " style={{ fontFamily: 'Borel, sans-serif', fontSize: '25.5px' }} aria-current="page" href="">
+                <a className="nav-link active " style={{ fontFamily: 'Borel, sans-serif', fontSize: '25.5px' }} aria-current="page" href="/">
                   DesTecho
                 </a>
               </li>
             </ul>
+
             <div className="ml-auto" style={{marginRight:'1rem'}} >
-              {/* <a href="/signin"><div style={{ display: 'inline-block' }}>
-                <button className="btn  mx-2 btn-white font-semibold" style={{ fontSize: '15px', fontWeight: '500', padding: '11px'}}>Log in</button>
-              </div></a> */}
-              {/* <button className="btn btn-darkgrey mx-2 btn-grey font-semibold"  style={{fontSize:'15px',fontWeight: '500',padding:'11px',width:"25%"}}>Sign up</button> */}
-              <a aria-current="page" href="/signin"><div style={{ display: 'inline-block',width:'100%' }}>
-                <button className="btn btn-dark  mx-2 text-white font-semibold hire_creatives" style={{ fontSize: '15px', padding: '11px'}} >Logout</button>
-              </div></a>
+              <div style={{ display: 'inline-block',width:'100%' }}>
+                <button onClick={logOut} className="btn btn-dark  mx-2 text-white font-semibold hire_creatives" style={{ fontSize: '15px', padding: '11px'}} >Logout</button>
+              </div>
             </div>
+
+            {/* <Logout/> */}
           </div>
         </div>
       </nav>
