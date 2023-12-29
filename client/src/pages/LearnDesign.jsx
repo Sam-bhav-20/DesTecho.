@@ -5,6 +5,8 @@ import Footer from '../components/Footer/Footer'
 import upcomingevents from '../assets/upcomingevents_learn.png'
 import ImageSlider from '../components/LD_Slider/ImageSliderLd';
 import './learndesign.css';
+import Faqs from '../components/Faqs/Faq'
+// import { Faqs } from '../components/Faqs/Faq'
 const LearnDesign = () => {
     return (
         <>
@@ -174,6 +176,7 @@ const LearnDesign = () => {
                     </div>
                 </div>
             </div>
+            <Faqs/>
             <div style={{
                 paddingTop:"11rem"
             }}>
