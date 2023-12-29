@@ -16,9 +16,9 @@ const VidText = () => {
                     On average, Pros engage with 85% more future clients, collaborators, and employers.
                   </p>
                 </div>
-                <div className='col-lg-4 order-1 order-lg-2 header-img mx-auto'>
+                <div className='col-lg-5 order-1 order-lg-2 header-img mx-auto'>
                   {/* Wrap the video element inside a div with a border */}
-                  <div className='col md-3' style={{ border: '4px solid rgb(168,204,126)', borderRadius: '8px', overflow: 'hidden',boxShadow:'5px 10px 12px #bbbdb9' }}>
+                  <div className='col md-3' style={{ border: '1rem solid #e3d5e1', borderRadius: '8px', overflow: 'hidden',boxShadow:'5px 10px 12px ' }}>
                     <video
                       src="https://framerusercontent.com/modules/assets/anyiHSPP2um93testsvKwARCwiI~YnvWAnCLXVX5ggQK88HR6sJu5P-YNcaJrIQp_UB_uPs.mp4"
                       loop
@@ -49,9 +49,9 @@ const VidText = () => {
         <div className='row'>
           <div className='col-10 mx-auto'>
             <div className='row'>
-            <div className='col-lg-4 mx-auto'>
+            <div className='col-lg-5 mx-auto'>
                 {/* Wrap the video element inside a div with a border */}
-                <div className='col md-3' style={{ border: '4px solid pink', borderRadius: '8px', overflow: 'hidden',boxShadow:'-5px 10px 12px #bbbdb9' }}>
+                <div className='col md-3' style={{ border: '1rem solid #ccdecf ', borderRadius: '8px', overflow: 'hidden',boxShadow:'-5px 10px 12px' }}>
                   <video
                     src="https://cdn.dribbble.com/users/1790221/screenshots/16821142/media/accedc19d3e46dcdf1b95c9e8c882a1e.mp4"
                     loop

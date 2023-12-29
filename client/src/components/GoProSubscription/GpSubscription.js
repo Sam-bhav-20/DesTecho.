@@ -60,7 +60,7 @@ const Subscribe = () => {
                 fontFamily: "Georgia, serif",
                 fontSize: "40px",
                 // fontWeight: "600px",
-              }}>$8/mo</h1>
+              }}>$5/mo</h1>
               <h6 className="card-subtitle mb-2 text-muted" style={{fontSize: "15px",fontFamily:'sans-serif'}}>when billed annualy</h6>
               <div className='mt-4'>
                   {/* ✅✔️ */}
@@ -73,7 +73,7 @@ const Subscribe = () => {
                 <p className='mt-3' style={{fontFamily:'sans-serif'}}>✔️ Ad free browsing experience</p>
                 <p className='mt-3' style={{fontFamily:'sans-serif'}}>✔️ Create a team account for your agency</p>
                 <p className='mt-3' style={{fontFamily:'sans-serif'}}>✔️ Stats & analytics</p>
-                <button className="my-2"
+                {/* <button className="my-2"
               style={{
                 fontSize: "1.2rem",
                 backgroundColor: "black",
@@ -84,7 +84,7 @@ const Subscribe = () => {
             >
               Subscribe today
             </button>
-            <p className="card-subtitle mx-auto mt-4 mb-2 text-muted" style={{fontSize: "15px",fontFamily:'sans-serif'}}>Prefer a monthly subscription? <u style={{fontWeight:'bold',color:'black'}}>Subscribe for $16/mo</u></p>
+            <p className="card-subtitle mx-auto mt-4 mb-2 text-muted" style={{fontSize: "15px",fontFamily:'sans-serif'}}>Prefer a monthly subscription? <u style={{fontWeight:'bold',color:'black'}}>Subscribe for $16/mo</u></p> */}
               </div>
             </div>
           </div>

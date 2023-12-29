@@ -8,6 +8,8 @@ import OneSignalComponent from '../components/FT_OneSignal/OneSignal'
 import GpSubscription from '../components/GoProSubscription/GpSubscription'
 import SliderMain from '../components/Main_Slider/SliderMain'
 import Footer from '../components/Footer/Footer'
+import { Pricing } from '../components/GoProPayment/Pricing'
+import { ChakraProvider } from '@chakra-ui/react'
 
 const GoPro = () => {
   return (
@@ -16,10 +18,9 @@ const GoPro = () => {
     <div
         className="container d-flex justify-content-center align-items-center"
         style={{
-          padding: "16vh 0px",
+          padding: " 9rem 0px 0px 1rem",
         }}
       >
-        <div>
           <div className="text-center">
             <p style={{ color: "red" }}>
               <strong>DESTECHO PRO</strong>
@@ -36,10 +37,10 @@ const GoPro = () => {
               <br /> with DesTecho Pro{" "}
             </h1>
             <p style={{ fontSize: "20px", padding: "15px 263px" }}>
-              Drive more eyes to your DesTecho profile to build your brand and
-              business
+              Whether you&apos;re looking to build your portfolio, find your next
+        freelance client or showcase your team's work -- we have a plan for you.
             </p>
-            <button className="my-2"
+            {/* <button className="my-2"
               style={{
                 fontSize: "20px",
                 backgroundColor: "black",
@@ -53,10 +54,11 @@ const GoPro = () => {
             </button>
             <p className="my-3" style={{ color: "rgb(110,109,122)" }}>
               Just $8/mo (billed annualy). Cancel anytime.
-            </p>
+            </p> */}
           </div>
-        </div>
       </div>
+      <ChakraProvider><Pricing/></ChakraProvider>
+      
       <GoCards/>
       <BrandGrid/>
       <VidText/>

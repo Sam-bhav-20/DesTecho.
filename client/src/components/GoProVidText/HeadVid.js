@@ -1,5 +1,6 @@
 import React from 'react'
-import GoPro_Vid from '../../assets/login.mp4'
+// import GoPro_Vid from '../../assets/login.mp4'
+import gpvid from '../../assets/goprovid.mp4';
 
 const HeadVid = () => {
   return (
@@ -12,7 +13,7 @@ const HeadVid = () => {
     </div>
     <div className='container-fluid col-md-10' style={{marginTop:'90px'}}>
     <video
-                    src={GoPro_Vid}
+                    src={gpvid}
                     loop
                     autoPlay
                     muted
