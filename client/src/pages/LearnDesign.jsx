@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Navbar from '../components/Navbar/Navbar'
 import SliderMain from '../components/Main_Slider/SliderMain'
 import Footer from '../components/Footer/Footer'
@@ -6,8 +6,24 @@ import upcomingevents from '../assets/upcomingevents_learn.png'
 import ImageSlider from '../components/LD_Slider/ImageSliderLd';
 import './learndesign.css';
 import Faqs from '../components/Faqs/Faq'
+import { useNavigate } from 'react-router-dom'
 // import { Faqs } from '../components/Faqs/Faq'
 const LearnDesign = () => {
+    const navigate = useNavigate();
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        if (!localStorage.getItem('DesTecho-user')) {
+          navigate('/login');
+        }
+      } catch (error) {
+        console.error('Error fetching user:', error);
+        // Handle error, e.g., redirect to login page or display an error message
+      }
+    };
+  
+    fetchUser();
+  }, [navigate]);
     return (
         <>
             <Navbar />

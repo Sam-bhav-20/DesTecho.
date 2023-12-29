@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Navbar from '../components/Navbar/Navbar'
 import GoCards from '../components/GoProCards/GoCards'
 import BrandGrid from '../components/GoProBrands/BrandGrid'
@@ -10,8 +10,23 @@ import SliderMain from '../components/Main_Slider/SliderMain'
 import Footer from '../components/Footer/Footer'
 import { Pricing } from '../components/GoProPayment/Pricing'
 import { ChakraProvider } from '@chakra-ui/react'
-
+import { useNavigate } from 'react-router-dom'
 const GoPro = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        if (!localStorage.getItem('DesTecho-user')) {
+          navigate('/login');
+        }
+      } catch (error) {
+        console.error('Error fetching user:', error);
+        // Handle error, e.g., redirect to login page or display an error message
+      }
+    };
+  
+    fetchUser();
+  }, [navigate]);
   return (
     <>
     <Navbar/>

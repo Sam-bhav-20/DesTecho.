@@ -6,6 +6,7 @@ import FindTalent from './pages/FindTalent'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LearnDesign from './pages/LearnDesign'
 import GoPro from './pages/GoPro'
+import Inspiration from './pages/Inspiration'
 const App = () => {
   return (
     <>
@@ -16,6 +17,7 @@ const App = () => {
       <Route path="/" element={<FindTalent/>}/>
       <Route path="/learndesign" element={<LearnDesign/>}/>
       <Route path="/gopro" element={<GoPro/>}/>
+      <Route path="/inspiration" element={<Inspiration/>}/>
     </Routes>
     </BrowserRouter>
 
