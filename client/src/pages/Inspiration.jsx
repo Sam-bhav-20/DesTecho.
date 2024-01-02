@@ -11,6 +11,7 @@ import { v4 } from 'uuid';
 import './inspiration.css';
 import Navbar from '../components/Navbar/Navbar';
 import { useNavigate } from 'react-router-dom';
+import Footer from '../components/Footer/Footer';
 Modal.setAppElement('#root')
 const Inspiration = () => {
   const [imageUpload, setImageUpload] = useState(null);
@@ -67,15 +68,37 @@ const Inspiration = () => {
   }
   
 
+  // const uploadFile = () => {
+  //   if (imageUpload === null) return;
+  //   const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
+  //   uploadBytes(imageRef, imageUpload).then((snapshot) => {
+  //     getDownloadURL(snapshot.ref).then((url) => {
+  //       setImageUrls((prev) => [...prev, url]);
+  //       setImageUpload(null);
+  //     });
+  //   });
+  // };
   const uploadFile = () => {
     if (imageUpload === null) return;
+  
     const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
-    uploadBytes(imageRef, imageUpload).then((snapshot) => {
-      getDownloadURL(snapshot.ref).then((url) => {
+    
+    uploadBytes(imageRef, imageUpload)
+      .then((snapshot) => getDownloadURL(snapshot.ref))
+      .then((url) => {
         setImageUrls((prev) => [...prev, url]);
+        
+        // Reset the file input after successful upload
+        const fileInput = document.getElementById('fileInput');
+        if (fileInput) {
+          fileInput.value = '';  // Reset the value to empty
+        }
+      })
+      .catch((error) => {
+        console.error('Error uploading file:', error);
       });
-    });
   };
+  
 
   useEffect(() => {
     const fetchImages = async () => {
@@ -107,14 +130,22 @@ const Inspiration = () => {
 
     <>
     <Navbar/>
-      <div>
+    <video width="100%"  autoPlay
+          loop
+          muted
+          playsInline>
+          <source src="https://tbcdn.talentbrew.com/company/1758/v2_0/videos/home-calling-all-careers-header-v4.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      <div className='mt-5 mb-3 text-center'>
         <input
           type="file"
+          id="fileInput"
           onChange={(event) => {
             setImageUpload(event.target.files[0]);
           }}
         />
-        <button onClick={uploadFile}> Upload Image</button>
+        <button className='px-3' onClick={uploadFile}>Upload</button>
       </div>
 
       <div className='ins'>
@@ -133,8 +164,32 @@ const Inspiration = () => {
           </div>
         ))}
       </div>
-
       <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        contentLabel="Image Modal"
+        // className="modal"
+        // className="custom-modal"
+        // overlayClassName="custom-overlay"
+      >
+        {/* Other modal content */}
+        {selectedImageUrl && (
+          <img
+            src={selectedImageUrl}
+            alt="Zoomed Image"
+            className="modal-image"
+          />
+        )}
+        <div className="modal-buttons">
+          <button onClick={handleDownload} className="modal-button">
+            Download
+          </button>
+          <button onClick={closeModal} className="modal-close-button">
+            &#10006; {/* Unicode for the "✖" character (cross symbol) */}
+          </button>
+        </div>
+      </Modal>
+      {/* <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         contentLabel="Image Modal"
@@ -156,7 +211,8 @@ const Inspiration = () => {
               Close
             </button>
           </div>
-      </Modal>
+      </Modal> */}
+      <Footer/>
     </>
   );
 };

@@ -11,6 +11,7 @@ import Subscription from '../components/FT_pay/Subscription';
 import SliderMain from '../components/Main_Slider/SliderMain';
 import Footer from '../components/Footer/Footer';
 import { useNavigate } from 'react-router-dom';
+import ScrollToTopButton from '../components/Scroll/ScrollToTopButton';
 const FindTalent = () => {
   const navigate = useNavigate();
   useEffect(() => {
@@ -31,6 +32,7 @@ const FindTalent = () => {
     <>
     {/* <div className=''> */}
     <Navbar/>
+    <ScrollToTopButton/>
     <div
         className="container d-flex justify-content-center align-items-center"
         style={{

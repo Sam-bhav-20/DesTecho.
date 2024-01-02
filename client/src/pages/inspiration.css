@@ -30,7 +30,7 @@
     max-width: 80%;
     max-height: 80%;
     overflow: hidden;
-    background-color: white;
+    background-color:white;
     padding: 20px;
   }
   
@@ -45,15 +45,29 @@
   .modal-button {
     display: block;
     margin: 20px auto;
-    padding: 10px;
-    background-color: #007bff;
+    padding: 1rem 1.5rem;
+    background-color: #8a3dba;
     color: white;
     border: none;
     cursor: pointer;
+    &:hover{
+      background-color:#51246e;
+
+  }
   }
   .modal-buttons{
     display: flex;
     /* align-items: center; */
     justify-content: center;
+  }
+  .modal-close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #000;
   }
   

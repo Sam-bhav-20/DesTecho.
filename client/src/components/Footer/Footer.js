@@ -23,13 +23,13 @@ const Footer = () => {
                         <div>
                         <ul>
                            <div className="footer_link_mid_div">
-                           <div><a className="footer-v2__link" href="#">For designers</a></div>
-                           <div><a className="footer-v2__link" href="#">Hire Talent</a></div>
-                           <div><a className="footer-v2__link" href="#">Inspiration</a></div>
+                           <div><a className="footer-v2__link" href="/learndesign">For designers</a></div>
+                           <div><a className="footer-v2__link" href="/">Hire Talent</a></div>
+                           <div><a className="footer-v2__link" href="/inspiration">Inspiration</a></div>
                            <div><a className="footer-v2__link" href="#">Advertising</a></div>
                            <div><a className="footer-v2__link" href="#">Blog</a></div>
-                           <div><a className="footer-v2__link" href="#">About</a></div>
-                           <div><a className="footer-v2__link" href="#">Careers</a></div>
+                           <div><a className="footer-v2__link" href="learndesign">About</a></div>
+                           <div><a className="footer-v2__link" href="gopro">Careers</a></div>
                            <div><a className="footer-v2__link" href="#">Support</a></div>
                            </div>
                         </ul>

@@ -7,6 +7,7 @@ import ImageSlider from '../components/LD_Slider/ImageSliderLd';
 import './learndesign.css';
 import Faqs from '../components/Faqs/Faq'
 import { useNavigate } from 'react-router-dom'
+import ScrollToTopButton from '../components/Scroll/ScrollToTopButton'
 // import { Faqs } from '../components/Faqs/Faq'
 const LearnDesign = () => {
     const navigate = useNavigate();
@@ -27,6 +28,7 @@ const LearnDesign = () => {
     return (
         <>
             <Navbar />
+            <ScrollToTopButton/>
             <div className="main_learndesign">
                 <div className="first_learndesign">
                     <div className="first_1_ld">

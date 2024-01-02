@@ -11,6 +11,7 @@ import Footer from '../components/Footer/Footer'
 import { Pricing } from '../components/GoProPayment/Pricing'
 import { ChakraProvider } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom'
+import ScrollToTopButton from '../components/Scroll/ScrollToTopButton'
 const GoPro = () => {
   const navigate = useNavigate();
   useEffect(() => {
@@ -30,6 +31,7 @@ const GoPro = () => {
   return (
     <>
     <Navbar/>
+    <ScrollToTopButton/>
     <div
         className="container d-flex justify-content-center align-items-center"
         style={{
