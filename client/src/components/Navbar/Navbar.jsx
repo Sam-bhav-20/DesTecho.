@@ -53,7 +53,7 @@ function Navbar() {
                 </a>
               </li>
               <li className="nav-item_desTecho">
-                <a className="nav-link active " style={{ fontFamily: 'Pacifico, sans-serif', fontSize: '25.5px' }} aria-current="page" href="/">
+                <a className="nav-link active " style={{ fontFamily: 'Pacifico, sans-serif', fontSize: '25.5px',color:'#51246e' }} aria-current="page" href="/">
                   DesTecho
                 </a>
               </li>

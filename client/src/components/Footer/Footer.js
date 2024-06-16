@@ -13,7 +13,7 @@ const Footer = () => {
                     <div>
                         <ul className="footer-v2__list">
                             <li>
-                                <a style={{ fontFamily: 'Borel, sans-serif', fontSize: '25.5px', textDecoration: 'none', color:'black' }} aria-current="page" href="/">
+                                <a style={{ fontFamily: 'Pacifico, sans-serif', fontSize: '25.5px', textDecoration: 'none', color:'#51246e' }} aria-current="page" href="/">
                                     DesTecho
                                 </a>
                             </li>
@@ -45,7 +45,7 @@ const Footer = () => {
                 </div>
                 <div className="footerabc_lower">
                     <ul className="footer_lower_list_ul">
-                        <li>© 2023 DesTEcho</li>
+                        <li>© 2023 DesTecho</li>
                         <li>Terms</li>
                         <li>Privacy</li>
                         <li>Cookies</li>

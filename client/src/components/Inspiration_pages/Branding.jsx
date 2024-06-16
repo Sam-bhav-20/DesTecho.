@@ -1,26 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
-import {
-  ref,
-  uploadBytes,
-  getDownloadURL,
-  listAll,
-} from 'firebase/storage';
-import { storage } from './firebase';
+import { storage } from '../../pages/firebase';
 import { v4 } from 'uuid';
-import './inspiration.css';
-import Navbar from '../components/Navbar/Navbar';
+import './insp.css';
 import { Link, useNavigate } from 'react-router-dom';
-import Footer from '../components/Footer/Footer';
+import Navbar from '../Navbar/Navbar';
+import Footer from '../Footer/Footer';
+import { ref,uploadBytes,getDownloadURL,listAll } from 'firebase/storage';
 Modal.setAppElement('#root')
-const Inspiration = () => {
+const Branding = () => {
   const linkStyle = {
     fontFamily:'Georgia,sans-serif',
     textDecoration: 'none',
     color: 'black', // Set your desired text color
     fontSize: '1.05rem', // Set your desired font size
-    marginRight: '20px', // Adjust spacing between links if needed
+    marginRight: '2rem', // Adjust spacing between links if needed
     // transition: 'box-shadow 0.3s ease'
+    // borderBottom:'solid 0.1rem black'
+  };
+  const linkStyle1 = {
+    fontFamily:'Georgia,sans-serif',
+    textDecoration: 'none',
+    color: 'black', // Set your desired text color
+    fontSize: '1.05rem', // Set your desired font size
+    marginRight: '2rem', // Adjust spacing between links if needed
+    // transition: 'box-shadow 0.3s ease',
+    borderBottom:'solid 0.15rem #51246e'
   };
   const [imageUpload, setImageUpload] = useState(null);
   const [imageUrls, setImageUrls] = useState([]);
@@ -155,7 +160,7 @@ const Inspiration = () => {
               <Link to="/inspiration/animation" style={linkStyle}>Animation</Link>
             </li>
             <li>
-              <Link to="/inspiration/branding" style={linkStyle}>Branding</Link>
+              <Link to="/inspiration/branding" style={linkStyle1}>Branding</Link>
             </li>
             <li>
               <Link to="/inspiration/illustration" style={linkStyle}>Illustration</Link>
@@ -255,4 +260,4 @@ const Inspiration = () => {
   );
 };
 
-export default Inspiration;
+export default Branding;
