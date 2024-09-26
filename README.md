@@ -36,8 +36,7 @@ DesTecho is a full-stack web application inspired by **Dribbble**, designed to s
 1. Clone the repository:
    git clone https://github.com/Sam-bhav-20/DesTecho..git
 
-2. Navigate to the project directory:
-   cd DesTecho
+2. Navigate to the project directory
 
 3. Install dependencies for the frontend and backend:
    npm install
