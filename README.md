@@ -13,7 +13,6 @@ DesTecho is a full-stack web application inspired by **Dribbble**, designed to s
 ## Tech Stack
 
 ### Frontend:
-- **Tailwind CSS**: Utility-first CSS framework for rapid UI development.
 - **Bootstrap**: Frontend component library for responsive design.
 - **Material UI**: React components for fast and easy UI customization.
 
