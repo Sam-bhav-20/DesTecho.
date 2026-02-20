@@ -16,13 +16,17 @@ import Print from './components/Inspiration_pages/Print'
 import ProductDesign from './components/Inspiration_pages/ProductDesign'
 import WebDesign from './components/Inspiration_pages/WebDesign'
 import Illustration from './components/Inspiration_pages/Illustration'
+import AuthNCallback from './pages/AuthNCallback'
+import { AuthProvider } from './context/AuthContext'
 const App = () => {
   return (
     <>
     <BrowserRouter>
+    <AuthProvider>
     <Routes>
       <Route path="/register" element={<Register/>}/>
       <Route path="/login" element={<Login/>}/>
+      <Route path="/authn/callback" element={<AuthNCallback/>}/>
       <Route path="/" element={<FindTalent/>}/>
       <Route path="/learndesign" element={<LearnDesign/>}/>
       <Route path="/gopro" element={<GoPro/>}/>
@@ -36,6 +40,7 @@ const App = () => {
       <Route path="/inspiration/webdesign" element={<WebDesign/>}/>
       <Route path="/inspiration/illustration" element={<Illustration/>}/>
     </Routes>
+    </AuthProvider>
     </BrowserRouter>
 
     </>

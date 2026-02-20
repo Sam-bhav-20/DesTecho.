@@ -12,22 +12,15 @@ import { Pricing } from '../components/GoProPayment/Pricing'
 import { ChakraProvider } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom'
 import ScrollToTopButton from '../components/Scroll/ScrollToTopButton'
+import { useAuth } from '../context/AuthContext'
 const GoPro = () => {
   const navigate = useNavigate();
+  const { user, loading } = useAuth();
   useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        if (!localStorage.getItem('DesTecho-user')) {
-          navigate('/login');
-        }
-      } catch (error) {
-        console.error('Error fetching user:', error);
-        // Handle error, e.g., redirect to login page or display an error message
-      }
-    };
-  
-    fetchUser();
-  }, [navigate]);
+    if (!loading && !user) {
+      navigate('/login');
+    }
+  }, [user, loading, navigate]);
   return (
     <>
     <Navbar/>

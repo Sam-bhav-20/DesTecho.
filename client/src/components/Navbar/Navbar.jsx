@@ -1,10 +1,12 @@
 import React,{useState} from "react";
 import './navbar.css';
+import { useAuth } from '../../context/AuthContext';
 // import Logout from "../Logout/Logout";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 function Navbar() {
-    const logOut=()=>{
-        window.localStorage.clear();
+    const { user, loginMethod, logout } = useAuth();
+    const logOut=async()=>{
+        await logout();
         window.location.href="./login";
     }
   return (
@@ -59,8 +61,16 @@ function Navbar() {
               </li>
             </ul>
 
-            <div className="ml-auto" style={{marginRight:'1rem'}} >
-              <div style={{ display: 'inline-block',width:'100%' }}>
+            <div className="ml-auto d-flex align-items-center" style={{marginRight:'1rem'}} >
+              {user && (
+                <span className="mx-2 text-muted" style={{ fontSize: '14px' }}>
+                  {user.username || user.userId || user.email || 'User'}
+                  {loginMethod === 'authn' && (
+                    <span className="badge bg-primary ms-1" style={{ fontSize: '10px' }}>AuthN</span>
+                  )}
+                </span>
+              )}
+              <div style={{ display: 'inline-block' }}>
                 <button onClick={logOut} className="btn btn-dark  mx-2 text-white font-semibold hire_creatives" style={{ fontSize: '15px', padding: '11px'}} >Logout</button>
               </div>
             </div>

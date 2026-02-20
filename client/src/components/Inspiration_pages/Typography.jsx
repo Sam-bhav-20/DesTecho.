@@ -7,6 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import { ref,uploadBytes,getDownloadURL,listAll } from 'firebase/storage';
+import { useAuth } from '../../context/AuthContext';
 Modal.setAppElement('#root')
 const Typography = () => {
   const linkStyle = {
@@ -34,20 +35,12 @@ const Typography = () => {
 
   const imagesListRef = ref(storage, 'images/');
   const navigate = useNavigate();
+  const { user, loading } = useAuth();
   useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        if (!localStorage.getItem('DesTecho-user')) {
-          navigate('/login');
-        }
-      } catch (error) {
-        console.error('Error fetching user:', error);
-        // Handle error, e.g., redirect to login page or display an error message
-      }
-    };
-  
-    fetchUser();
-  }, [navigate]);
+    if (!loading && !user) {
+      navigate('/login');
+    }
+  }, [user, loading, navigate]);
   const openModal = (url) => {
     setSelectedImageUrl(url);
     setModalIsOpen(true);

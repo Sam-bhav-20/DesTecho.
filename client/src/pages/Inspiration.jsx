@@ -12,6 +12,7 @@ import './inspiration.css';
 import Navbar from '../components/Navbar/Navbar';
 import { Link, useNavigate } from 'react-router-dom';
 import Footer from '../components/Footer/Footer';
+import { useAuth } from '../context/AuthContext';
 Modal.setAppElement('#root')
 const Inspiration = () => {
   const linkStyle = {
@@ -29,20 +30,12 @@ const Inspiration = () => {
 
   const imagesListRef = ref(storage, 'images/');
   const navigate = useNavigate();
+  const { user, loading } = useAuth();
   useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        if (!localStorage.getItem('DesTecho-user')) {
-          navigate('/login');
-        }
-      } catch (error) {
-        console.error('Error fetching user:', error);
-        // Handle error, e.g., redirect to login page or display an error message
-      }
-    };
-  
-    fetchUser();
-  }, [navigate]);
+    if (!loading && !user) {
+      navigate('/login');
+    }
+  }, [user, loading, navigate]);
   const openModal = (url) => {
     setSelectedImageUrl(url);
     setModalIsOpen(true);

@@ -3,20 +3,34 @@ import styled from "styled-components";
 import backgroundVideo from '../assets/login.mp4'
 import {ToastContainer,toast} from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
-import { Link, useNavigate } from 'react-router-dom' ;
+import { Link, useNavigate, useSearchParams } from 'react-router-dom' ;
 import { loginRoute } from '../utils/APIRoutes';
 import axios from "axios";
+import { useAuth } from '../context/AuthContext';
 const Login = () => {
     const navigate = useNavigate()
+    const [searchParams] = useSearchParams();
+    const { user, loginLocal, loginWithAuthN } = useAuth();
     const[values,setValues]=useState({
         username:"",
         password:"",
     });
     useEffect(()=>{
-        if(localStorage.getItem('DesTecho-user')){
+        if(user){
             navigate('/')
         }
-    },[navigate])
+        // Show error from AuthN redirect if any
+        const error = searchParams.get('error');
+        if (error) {
+            toast.error(`AuthN login failed: ${error}`, {
+                position: "top-right",
+                autoClose: 3000,
+                pauseOnHover: true,
+                draggable: true,
+                theme: "dark",
+            });
+        }
+    },[user, navigate, searchParams])
 
     const handleSubmit=async(event)=>{
         event.preventDefault();
@@ -40,7 +54,7 @@ const Login = () => {
             }
             if(data.status===true)
             {
-                localStorage.setItem('DesTecho-user',JSON.stringify(data.user));
+                loginLocal(data.user);
                 navigate("/");
             }
             } catch (error) {
@@ -107,6 +121,14 @@ const Login = () => {
             />
             
             <button className='login_btn' type="submit">Login</button>
+            <div className="divider">
+                <span className="divider-line"></span>
+                <span className="divider-text">OR</span>
+                <span className="divider-line"></span>
+            </div>
+            <button className='authn_btn' type="button" onClick={loginWithAuthN}>
+                Login with AuthN (SSO)
+            </button>
             <span>Don't have an account? <Link to="/register">Register</Link></span>
         </form>
     </FormContainer>
@@ -196,6 +218,35 @@ const FormContainer = styled.div`
             &:hover{
                 background-color:#51246e;
 
+            }
+        }
+        .divider{
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            .divider-line{
+                flex: 1;
+                height: 1px;
+                background-color: #4b0f70;
+            }
+            .divider-text{
+                color: #4b0f70;
+                font-weight: bold;
+                font-size: 0.9rem;
+            }
+        }
+        .authn_btn{
+            background-color:#1a73e8;
+            color:white;
+            padding: 1rem 2rem;
+            border: none;
+            font-weight:bold;
+            cursor: pointer;
+            border-radius: 4rem;
+            font-size: 1rem;
+            transition: 0.5s ease-in-out;
+            &:hover{
+                background-color:#1557b0;
             }
         }
         span{

@@ -6,8 +6,10 @@ import "react-toastify/dist/ReactToastify.css"
 import { Link, useNavigate } from 'react-router-dom' ;
 import { registerRoute } from '../utils/APIRoutes';
 import axios from "axios";
+import { useAuth } from '../context/AuthContext';
 const Register = () => {
     const navigate = useNavigate()
+    const { user, loginLocal } = useAuth();
     const[values,setValues]=useState({
         username:"",
         emailId:"",
@@ -15,10 +17,10 @@ const Register = () => {
         confirmPassword:"",
     });
     useEffect(()=>{
-        if(localStorage.getItem('DesTecho-user')){
+        if(user){
             navigate('/')
         }
-    },[navigate])
+    },[user, navigate])
 
     const handleSubmit=async(event)=>{
         event.preventDefault();
@@ -43,7 +45,7 @@ const Register = () => {
             }
             if(data.status===true)
             {
-                localStorage.setItem('DesTecho-user',JSON.stringify(data.user));
+                loginLocal(data.user);
                 navigate("/");
             }
             } catch (error) {
